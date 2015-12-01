@@ -1,0 +1,144 @@
+body {
+  background-color: palevioletred;
+  overflow: hidden;
+}
+
+header {margin-left: 0;text-align: center; font-family:'Reenie Beanie', cursive; font-size: 18px; color: darkslateblue;}
+
+.container {
+  position: absolute;
+    margin-top:100px;
+    margin-left:500px;
+}
+
+.drip {
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  margin-left: 84px;
+  background-color: rgba(40,12 ,4 ,1);
+  border-radius: 100px;
+  visibility: hidden;
+  animation: drip 2s ease-in infinite;
+}
+
+.cup-container {
+  width: 180px;
+  height: 200px;
+  border-right: 4px solid white;
+  border-left: 4px solid white;
+  border-bottom: 4px solid white;
+    border-radius:5px;
+  overflow: hidden;
+
+}
+
+
+.coffee {
+  width: 180px;
+  height: 260px;
+  margin-top: 60px;
+  border-radius: 0;
+background:linear-gradient(rgba(40,12 ,4 ,1) 1%, rgba(56 ,28,22,1) 80%,rgba(80,28,22,.7) 100%);
+ 
+}
+
+
+.splash {
+  position: relative;
+  top: 200px;
+margin-left: 80px;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(40,12 ,4 ,1);
+  border-radius: 1000px;
+  animation: splash 2s linear infinite;
+}
+
+
+
+@keyframes drip {
+  0% {
+    width: 0px;
+    height: 0px;
+    visibility: visible;
+  }
+  5% {
+    width: 20px;
+    height: 20px;
+  }
+  8% {
+    width: 16px;
+    height: 16px;
+  }
+  10%, 30% {
+    top: 0;
+    width: 20px;
+    height: 20px;
+  }
+  50% {
+    top: 200px;
+      width: 8px;
+      height: 8px;
+  }
+  60% {
+      visibility:hidden;
+  }
+  100% {
+      visibility:hidden;
+  }
+}
+
+@keyframes splash {
+  0%, 50% {
+    top: 90px;
+  }
+  60% {
+    top: 85px;
+  }
+  90%, 100% {
+    top: 90px;
+  }
+}
+
+
+.steam{
+position: absolute;
+top:200px;
+left:600px;
+animation: steam 3s linear infinite;
+  
+}
+.steam:before,
+.steam:after{
+  content: " ";
+  position: absolute;
+  top:200;
+  border-top: 2px solid #d6d2d2;
+  border-left: 5px solid #d6d2d2;
+  width: 40px;
+  height: 70px;
+  border-radius: 80% 0 10% 10%; 
+ transform: rotate(168deg) skewY(10deg);
+  filter: blur(7px);
+ }
+
+.steam:after{
+top:40px;
+left:-35px;
+border-radius: 80% 0 10% 10%; 
+transform: rotate(315deg) skewY(10deg);
+filter: blur(7px);
+}
+
+
+
+@keyframes steam {
+0% { top: 200px; opacity: .075; visibility: visible; }
+20% { top: 160px; opacity: 0.2; }
+40% { top: 140px; opacity: 0.4; }
+60% { top: 120px; opacity: 0.2; }
+80% { top: 100px; opacity: .075; }
+100% { top: 80px; opacity: 0; visibility: hidden; }
+}
